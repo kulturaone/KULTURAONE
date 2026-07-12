@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/jpg" href="she-just-wanna-party.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- This block forces the text to be yellow on this page only -->
+    <style>
+        body, h1, h2, p, .artist, .content-box, summary, .site-footer, .streaming-icons a {
+            color: #FFFF00 !important;
+        }
+    </style>
+    
+    <title>she just wanna party. - Johnny Maye</title>
+</head>
+<body>
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="BG/she-just-wanna-party-bg.mp4" type="video/mp4">
+    </video>
+    
+    <header class="main-header">
+        <a href="index.html"><h1>KULTURAONE</h1></a>
+    </header>
+    
+    <main class="song-content">
+        <img src="JPG/she-just-wanna-party.jpg" class="main-art" alt="Cover Art">
+        
+        <div class="song-info">
+            <h1 class="song-title">she just wanna party.</h1>
+            <p class="artist">Johnny Maye</p>
+        </div>
+        
+        <audio id="audioTrack" src="MP3/she-just-wanna-party.mp3"></audio>
+        
+        <div class="custom-audio-player" onclick="togglePlay()">
+            <div id="playBtn" class="play-btn">►</div>
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="streaming-icons">
+            <a href="https://open.spotify.com/album/4G1w9j9tZLj5QtlE6tDh0O?si=HQZeNIegQxWebw8MarNlLw">SPOTIFY</a>
+            <a href="https://music.apple.com/ph/song/she-just-wanna-party/6782072672" target="_blank">APPLE MUSIC</a>
+            <a href="https://youtu.be/KRBwo2FrCeM?si=ju61w_KHIuiSMO8k" target="_blank">YOUTUBE</a>
+            <a href="https://soundcloud.com/snacomusic/she-just-wanna-party-1?si=20d933d10f2b41c5ab14af48d725bccf&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">SOUNDCLOUD</a>
+        </div>
+        </div>
+
+        <details>
+            <summary>Credits</summary>
+            <div class="content-box">
+                Written by Johnny Maye<br>
+                Produced by Andreas Ellingsberg (Yelling)<br>
+                Released June 23 2026<br>
+                ℗ © 2026 BlackHeart Hotel
+            </div>
+        </details>
+
+        <details>
+            <summary>Lyrics</summary>
+            <div class="content-box">
+[Verse 1]<br>
+    You wanna get drunk right now.<br>
+    cause all of your friends are out,<br>
+    I guess you’re gonna leave me now.<br><br>
+
+    Who do you think you are,<br>
+    when all of the lights are out?<br>
+    no need to tell me now.<br>
+    I guess we’re gonna figure out.<br><br>
+
+    [Chorus]<br>
+    (baby) she just wanna have fun<br>
+    (baby) I think she party too much.<br>
+    (baby) I know she feinin my touch.<br>
+    (baby) I know she feinin my love.<br><br>
+
+    [Verse 2]<br>
+    Maybe I think too hard.<br>
+    I don’t like going out.<br>
+    I don’t wanna meet your friends.<br>
+    I hate every one of them.<br><br>
+
+    [Chorus]<br>
+    (baby) she just wanna have fun<br>
+    (baby) I think she party too much.<br>
+    (baby) I know she feinin my touch.<br>
+    (baby) I know she feinin my love.<br><br>
+
+    [Verse 3]<br>
+    I looked in your eyes that night.<br>
+    But no one was looking back.<br>
+    I was looking for my friend.<br>
+    — oh, my best friend<br>
+    my best friend.<br>
+    Where did you go? (x4)<br><br>
+
+    [Chorus]<br>
+    (baby) she just wanna have fun<br>
+    (baby) I think she party too much.<br>
+    (baby) I know she feinin my touch.<br>
+    (baby) I know she feinin my love.
+            </div>
+        </details>
+
+        <footer class="site-footer">
+            © 2026 SYK MUSIC
+        </footer>
+    </main>
+
+    <script>
+        const audio = document.getElementById('audioTrack');
+        const playBtn = document.getElementById('playBtn');
+        const progressBar = document.getElementById('progressBar');
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.innerHTML = '❚❚';
+            } else {
+                audio.pause();
+                playBtn.innerHTML = '►';
+            }
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const progress = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = progress + '%';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DISCOVER - KULTURAONE</title>
+    
+    <style>
+        .section-header { text-align: center; margin: 40px 0 20px 0; }
+        .section-title { font-size: 0.7rem; letter-spacing: 4px; opacity: 0.8; text-transform: uppercase; }
+        
+        .grid { 
+            display: flex; flex-wrap: wrap; justify-content: center; 
+            gap: 20px; padding: 20px; max-width: 1000px; margin: 0 auto;
+        }
+        .song-item { text-align: center; cursor: pointer; width: 150px; flex: 0 0 150px; }
+        .song-item img { 
+            width: 100%; aspect-ratio: 1 / 1; object-fit: cover; 
+            border-radius: 8px; transition: transform 0.2s; 
+        }
+        .song-item img:hover { transform: scale(1.05); }
+        .divider { width: 100%; max-width: 800px; height: 1px; background: rgba(255,255,255,0.1); margin: 40px auto; }
+    </style>
+</head>
+<body>
+    <header class="main-header" style="text-align: center;"><h1><a href="index.html">KULTURAONE</a></h1></header>
+
+    <!-- SECTION 1: CURATED -->
+    <div class="section-header"><p class="section-title">CURATED</p></div>
+    <div id="curatedGrid" class="grid"></div>
+
+    <div class="divider"></div>
+
+    <!-- SECTION 2: CURRENTS -->
+    <div class="section-header"><p class="section-title">CURRENTS</p></div>
+    <div id="currentsGrid" class="grid"></div>
+
+    <script>
+        // Shuffle function
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        // PREMIUM FEATURES (Static order)
+        const curated = [
+            { title: "she just wanna party.", artist: "Johnny Maye", art: "JPG/she-just-wanna-party.jpg", link: "she-just-wanna-party.html" },
+            { title: "Money Tree", artist: "HollywoodB", art: "JPG/money-tree.jpg", link: "money-tree.html" },
+            { title: "SAVE ME", artist: "someoneyouknew", art: "JPG/save-me.jpg", link: "save-me.html" },
+            { title: "Find Me", artist: "b3aver", art: "JPG/find-me.jpg", link: "find-me.html" },
+            { title: "POPULAR", artist: "Izek Ceaser", art: "JPG/popular.JPEG", link: "popular.html" }
+        ];
+
+        // LIGHT CURATIONS (Randomized)
+        const currents = [
+            { title: "without u", artist: "Jake Kiss", art: "JPG/without-u.jpg", link: "https://youtu.be/CLjSsoo78ys?si=gN8rHx-JpjNEN1X1" },
+            { title: "Twinems", artist: "xtaye", art: "JPG/twinems.jpg", link: "https://youtu.be/y7TqhBovm18?si=ReDcotD8NBYasbs3" },
+            { title: "VOILÀ!", artist: "THREESIXTY", art: "JPG/voila!.jpg", link: "https://youtu.be/PC5Mpy5eYbo?si=ITFhtbjlu8HDgTwj" },             
+            { title: "Another Day", artist: "Quoia States", art: "JPG/another-day.jpg", link: "https://youtu.be/wUVH0dX_cuw?si=PNSQp0XYacxAjcPr" },
+            { title: "MET SOMEONE ELSE", artist: "Sean Leon", art: "JPG/met-someone-else.jpg", link: "https://youtu.be/Wg6HEHlh48c?si=pPmWqMQhOJYmRh4Y" },
+            { title: "HIGH LIFE", artist: "WrthCr8ting", art: "JPG/high-life.jpg", link: "https://youtu.be/q298rKRd_aY?si=8PvKewIlzQfa8wh3" },
+	    { title: "STRICT PROGRAM", artist: "agmdre", art: "JPG/strict-program.jpg", link: "https://youtu.be/Sfc2gIWbOws?si=jWvBkQFM-XakZcgQ" },
+	    { title: "Ms. Somebody", artist: "Duff Mardino", art: "JPG/ms-somebody.jpg", link: "https://youtu.be/dgdJ5PiKcpE?si=awDzCoGzlyyObZip" },
+            { title: "RUN IT UP", artist: "someoneyouknew", art: "JPG/run-it-up.jpg", link: "https://www.sykmusic.ca/music/artist-someoneyouknew/run-it-up" }
+
+        ];
+
+        // Render Curated
+        const cGrid = document.getElementById('curatedGrid');
+        curated.forEach(song => {
+            cGrid.innerHTML += `
+                <div class="song-item" onclick="window.location='${song.link}'">
+                    <img src="${song.art}" alt="${song.title}">
+                    <p style="font-size: 0.8rem; margin: 5px 0 0 0;">${song.title}</p>
+                    <p style="font-size: 0.65rem; margin: 0; opacity: 0.6;">${song.artist}</p>
+                </div>
+            `;
+        });
+
+        // Render Randomized Currents
+        const currGrid = document.getElementById('currentsGrid');
+        shuffle(currents).forEach(song => {
+            currGrid.innerHTML += `
+                <div class="song-item" onclick="window.open('${song.link}', '_blank')">
+                    <img src="${song.art}" alt="${song.title}">
+                    <p style="font-size: 0.8rem; margin: 5px 0 0 0;">${song.title}</p>
+                    <p style="font-size: 0.65rem; margin: 0; opacity: 0.6;">${song.artist}</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

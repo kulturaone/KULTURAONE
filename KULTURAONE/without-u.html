@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <title>without u - Jake Kiss</title>
+</head>
+<body>
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="[VIDEO_FILENAME].mp4" type="video/mp4">
+    </video>
+    
+    <header class="main-header">
+        <a href="index.html"><h1>KULTURAONE</h1></a>
+    </header>
+    
+    <main class="song-content">
+        <img src="JPG/without-u.jpg" class="main-art" alt="Cover Art">
+        
+        <div class="song-info">
+            <h1 class="song-title">without u</h1>
+            <p class="artist">jake kiss</p>
+        </div>
+        
+        <audio id="audioTrack" src="[AUDIO_FILENAME].mp3"></audio>
+        
+        <div class="custom-audio-player" onclick="togglePlay()">
+            <div id="playBtn" class="play-btn">►</div>
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="streaming-icons">
+            <a href="https://open.spotify.com/album/5ZL7YgzBevg9ginJBVBiER">SPOTIFY</a>
+            <a href="https://music.apple.com/us/song/without-u/6781507275">APPLE MUSIC</a>
+            <a href="#" target="_blank">YOUTUBE</a>
+        </div>
+
+        <details>
+            <summary>Credits</summary>
+            <div class="content-box">
+                Written by Jake Kiss<br>
+                Produced by [PRODUCER]<br>
+                Released June 26 2026<br>
+                ℗ © 2026 Breakfast Club Records
+            </div>
+        </details>
+
+        <details>
+            <summary>Lyrics</summary>
+            <div class="content-box">
+                [PASTE LYRICS HERE]
+            </div>
+        </details>
+
+        <footer class="site-footer">
+            ℗ © 2026 SYK MUSIC
+        </footer>
+    </main>
+
+    <script>
+        const audio = document.getElementById('audioTrack');
+        const playBtn = document.getElementById('playBtn');
+        const progressBar = document.getElementById('progressBar');
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.innerHTML = '❚❚';
+            } else {
+                audio.pause();
+                playBtn.innerHTML = '►';
+            }
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const progress = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = progress + '%';
+            }
+        });
+    </script>
+</body>
+</html>

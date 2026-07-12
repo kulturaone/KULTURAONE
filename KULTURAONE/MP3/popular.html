@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/jpg" href="icon.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <title>POPULAR - Izek Ceaser </title>
+</head>
+<body>
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="[VIDEO_FILENAME].mp4" type="video/mp4">
+    </video>
+    
+    <header class="main-header">
+        <a href="index.html"><h1>KULTURAONE</h1></a>
+    </header>
+    
+    <main class="song-content">
+        <img src="popular.JPG" class="main-art" alt="Cover Art">
+        
+        <div class="song-info">
+            <h1 class="song-title">POPULAR</h1>
+            <p class="artist">Izek Ceaser</p>
+        </div>
+        
+        <audio id="audioTrack" src="popular-ve.mp3"></audio>
+        
+        <div class="custom-audio-player" onclick="togglePlay()">
+            <div id="playBtn" class="play-btn">►</div>
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        </div>
+
+
+
+        <details>
+            <summary>Credits</summary>
+            <div class="content-box">
+                Written by Isaac Mencias<br>
+                Produced by Jani Suki<br>
+                Released N/A<br>
+                ℗ © 2026 Izek Cease
+            </div>
+        </details>
+
+        <details>
+            <summary>Lyrics</summary>
+            <div class="content-box">
+                Popular, yeah they got the drugs<br>
+		Yeah they got the love<br>
+		Yeah they got the lust<br>
+		Yeah they got no trust<br>
+		I ain’t with that must<br>
+		I ain’t with that lust<br>
+		But I know you<br>
+<br>
+Popular, yeah they got the drugs<br>
+Yeah they got the love<br>
+Yeah they got the lust<br>
+I’m on a new run<br>
+I’m on two runs<br>
+But I just seen yo shawty<br>
+Now I stole yo bitch<br>
+She my brand new body, she my brand new body<br>
+Yeh she such a hottie, I just got some money<br>
+And now I’m throwin tha cash and she bouncin dat ass X2<br>
+<br>
+Now she dance on pole<br>
+Like magic city, she got that magic city glow, are we in vice city?<br>
+Like I don’t know x2<br>
+Damn she got my head dizzie like<br>
+<br>
+Woah<br>
+<br>
+You so popular baby<br>
+Got that moves baby<br>
+Got that groove baby<br>
+Like whatchu finna do like<br>
+Like, over dat body x2 woo<br>
+Throwing that cash go go crazy<br>
+I just gotta go idk baby<br>
+movin like prime lil baby<br>
+I see on the daily like<br>
+You crazy like<br>
+You so popular.
+            </div>
+        </details>
+
+        <footer class="site-footer">
+            ℗ © 2026 SYK MUSIC
+        </footer>
+    </main>
+
+    <script>
+        const audio = document.getElementById('audioTrack');
+        const playBtn = document.getElementById('playBtn');
+        const progressBar = document.getElementById('progressBar');
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.innerHTML = '❚❚';
+            } else {
+                audio.pause();
+                playBtn.innerHTML = '►';
+            }
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const progress = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = progress + '%';
+            }
+        });
+    </script>
+</body>
+</html>

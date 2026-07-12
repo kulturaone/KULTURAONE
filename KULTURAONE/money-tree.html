@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/jpg" href="JPG/money-tree.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <title>Money Tree - HollywoodB</title>
+</head>
+<body>
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="BG/money-tree-bg.mp4" type="video/mp4">
+    </video>
+    
+    <header class="main-header">
+        <a href="index.html"><h1>KULTURAONE</h1></a>
+    </header>
+    
+    <main class="song-content">
+        <img src="JPG/money-tree.jpg" class="main-art" alt="Cover Art">
+        
+<div class="song-info">
+            <h1 class="song-title">Money Tree</h1>
+            <p class="artist">
+                <a href="https://www.instagram.com/mr.hollywoodb/" target="_blank" style="text-decoration: none; color: inherit;">
+                    HollywoodB
+                </a>
+            </p>
+        </div>
+        
+        <audio id="audioTrack" src="MP3/money-tree.mp3"></audio>
+        
+        <div class="custom-audio-player" onclick="togglePlay()">
+            <div id="playBtn" class="play-btn">►</div>
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="streaming-icons">
+            <a href="https://open.spotify.com/track/0o6gEGK3wHdhvD5TXXh9dC?si=b61531657194478b
+">SPOTIFY</a>
+            <a href="https://music.apple.com/us/song/money-tree/6762159296
+">APPLE MUSIC</a>
+            <a href="https://youtu.be/4jGyLWL0p5c?si=yEvsoEaf72cKk1Ys
+" target="_blank">YOUTUBE</a>
+            <a href="https://soundcloud.com/hollywoodb-466930712/money-tree-7?in=hollywoodb-466930712/sets/conflicted-consigliere-players&si=1c0b8070460740059218e8f4ea63ab78&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing
+">SOUNDCLOUD</a>
+        </div>
+
+        <details>
+            <summary>Credits</summary>
+            <div class="content-box">
+                Written by Luke Benson<br>
+                Produced by FayeSavage<br>
+                Released September 19 2025<br>
+                ℗ © 2025 Luke Effect
+            </div>
+        </details>
+
+        <details>
+            <summary>Lyrics</summary>
+            <div class="content-box">
+                (Nowadays Im just shaking my head at these ****)<br>
+(When they gone learn that they gotta put the money first instead these bitches man)<br>
+(Somethings they just never learn)<br>
+<br>
+Word on the street I been fake to these ****<br>
+But they wasn't round when my pocket was stale<br>
+My circle too small Im too real for these ****<br>
+Hate opening up cuz a bitch went and tell<br>
+Im trusting my gut I believe myself<br>
+I can tell if you real by the way that you smell<br>
+I always got bitches that rocking for me and working for me like its Kenan and Kel<br>
+<br>
+Getting these hoes got too easy for me<br>
+Starting get picky I wanted them devoted<br>
+I don't be speaking too much if you loyal love me should already know it<br>
+I work till Im dead in this bitch grind everyday I got God as my witness<br>
+I den got suck I was looking at diamonds<br>
+They shinnin right here damn they looping and spinnin<br>
+Hey-Hey looping and spinnin head to my shoes yeah Im standing on business<br>
+Standing on business walking the talk shit bound to happen they thought it was luck<br>
+We cant watch a movie 10 seconds in she ready just waiting to fuck<br>
+<br>
+(Damn man I don't even know why I pay for Netflix and shit)<br>
+<br>
+Love the tree huh money tree huh<br>
+Counting cheese huh or the cheddar<br>
+Roll a G uh its sativa<br>
+She can leave huh I don't need her<br>
+<br>
+Tryna see how I do? Call me John no can do<br>
+Shawdy mad what I do? Kick her out make her poof<br>
+In my bag never lose getting honey like Winnie the Pooh<br>
+I can't chase these bitches I just wait till they come after me<br>
+Sipping on this TP and we fucking till we have to sleep<br>
+Perfect timing Im just cooking up until its time to eat<br>
+My sauce was made no Italy this shit a family recipe<br>
+<br>
+Love the tree huh money tree huh<br>
+Counting cheese huh or the cheddar<br>
+Roll a G uh its sativa<br>
+She can leave huh I don't need her<br>
+            </div>
+        </details>
+
+<details>
+            <summary>About</summary>
+            <div class="content-box">
+                Money Tree is HollywoodB unleashed. No filters. No pretending. This is the version of me that doesn't care about fitting into anyone else's expectations. It's confidence, hunger, and ambition at full volume.
+
+At its core, the song is about chasing your dreams with everything you have and refusing to let doubt, criticism, or anyone standing in your way dictate your path. It's the mindset of betting on yourself, embracing success without apology, and letting your work speak louder than opinions.
+
+There's an undeniable flex throughout the record but it's a calculated one. Every bar is a statement that I know where I'm going, and I'm not asking for permission to get there.
+            </div>
+        </details>
+
+
+        <footer class="site-footer">
+            © 2026 SYK MUSIC
+        </footer>
+    </main>
+
+    <script>
+        const audio = document.getElementById('audioTrack');
+        const playBtn = document.getElementById('playBtn');
+        const progressBar = document.getElementById('progressBar');
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.innerHTML = '❚❚';
+            } else {
+                audio.pause();
+                playBtn.innerHTML = '►';
+            }
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const progress = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = progress + '%';
+            }
+        });
+    </script>
+</body>
+</html>

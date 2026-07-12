@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/jpg" href="JPG/find-me.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <title>Find Me - b3aver</title>
+</head>
+<body>
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="BG/find-me-bg.mp4" type="video/mp4">
+    </video>
+    
+    <header class="main-header">
+        <a href="index.html"><h1>KULTURAONE</h1></a>
+    </header>
+    
+    <main class="song-content">
+        <img src="JPG/find-me.jpg" class="main-art" alt="Cover Art">
+        
+        <div class="song-info">
+            <h1 class="song-title">Find Me</h1>
+            <p class="artist">b3aver</p>
+        </div>
+        
+        <audio id="audioTrack" src="MP3/find-me.mp3"></audio>
+        
+        <div class="custom-audio-player" onclick="togglePlay()">
+            <div id="playBtn" class="play-btn">►</div>
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="streaming-icons">
+            <a href="https://open.spotify.com/track/4P96qZgzqmd5n1cEnvF1Uu?si=16fb47aa172a4b01">SPOTIFY</a>
+            <a href="https://music.apple.com/us/song/find-me/1694957892">APPLE MUSIC</a>
+            <a href="https://youtu.be/ZBBrTurIoY4?si=2zZTnYrh7Px_7stn" target="_blank">YOUTUBE</a>
+        </div>
+
+        <details>
+            <summary>Credits</summary>
+            <div class="content-box">
+                Written by Owen Shaddick<br>
+                Produced by someoneyouknew (f.k.a b3aver)<br>
+                Released March 3 2023<br>
+                ℗ © 2023 SYK MUSIC
+            </div>
+        </details>
+
+        <details>
+            <summary>About</summary>
+            <div class="content-box">
+                Find Me stands as the climactic, high-energy apex of the 2023 album NEW FEELING, serving as the final, defiant heartbeat of the b3aver alter-ego. Originally conceptualized as a standalone single for someoneyouknew, the track was repurposed as a vital narrative bridge, narrowly escaping the cutting room floor to become a cinematic, synth-heavy anthem defined by driving, powerful drums. As the second last track on the album, it acts as the last uptempo track, marking the definitive conclusion of the b3aver era. Though rumors swirl regarding a new project, this track remains the final transmission of an identity that has permanently evolved; discover the ending to find the new.
+            </div>
+        </details>
+
+        <footer class="site-footer">
+            ℗ © 2026 SYK MUSIC
+        </footer>
+    </main>
+
+    <script>
+        const audio = document.getElementById('audioTrack');
+        const playBtn = document.getElementById('playBtn');
+        const progressBar = document.getElementById('progressBar');
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.innerHTML = '❚❚';
+            } else {
+                audio.pause();
+                playBtn.innerHTML = '►';
+            }
+        }
+
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const progress = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = progress + '%';
+            }
+        });
+    </script>
+</body>
+</html>
