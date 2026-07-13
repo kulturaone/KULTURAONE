@@ -83,12 +83,12 @@
     </main>
 
     <script>
-        const endDate = new Date(2026, 6, 13, 19, 0).getTime(); 
+        const endDate = new Date(2026, 6, 14, 0, 0).getTime(); 
 
         function checkPass() {
             const pass = document.getElementById('passInput').value;
             const now = new Date().getTime();
-            const activePassword = (now >= endDate) ? "nomoremusicforyou333" : "test";
+            const activePassword = (now >= endDate) ? "nomoremusicforyou333" : "blackout";
 
             if (pass === activePassword) {
                 document.getElementById('passwordGate').style.display = 'none';
